@@ -1,27 +1,35 @@
 <template>
   <section class="timeline">
     <ul>
+
       <li v-for="item of entries" :key="item.id">
         <div>
-          <span class="when">{{ item.from }} - {{ item.to }}</span>
-
-          <span class="what">{{ item.title }}</span>
-
-          <span class="where" v-if="item.link">
-            <a :href="item.link" target="_blank">{{ item.company }}</a>
+          <!-- when -->
+          <span>
+            {{ item.from }} - {{ item.to }}
           </span>
 
-          <span class="where" v-else>
+          <!-- title -->
+          <span class="title">
+            {{ item.title }}
+          </span>
+
+          <!-- company -->
+          <span v-if="item.link">
+            <a :href="item.link" target="_blank">{{ item.company }}</a>
+          </span>
+          <span v-else>
             {{ item.company }}
           </span>
 
+          <!-- toggles -->
           <span class="toggle">
             <icon name="plus-circle"></icon>
             <icon name="minus-circle"></icon>
           </span>
-
         </div>
       </li>
+
     </ul>
   </section>
 </template>
@@ -170,13 +178,6 @@ h1 {
   border-color: transparent transparent transparent #f45b69;
 }
 
-time {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
 /* EFFECTS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -238,7 +239,7 @@ time {
   }
 }
 
-.what {
+.title {
   font-weight: bolder;
   display: block;
 }
