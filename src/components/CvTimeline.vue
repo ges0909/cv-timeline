@@ -1,35 +1,7 @@
 <template>
   <section class="timeline">
     <ul>
-
-      <li v-for="item of entries" :key="item.id">
-        <div>
-          <!-- when -->
-          <span>
-            {{ item.from }} - {{ item.to }}
-          </span>
-
-          <!-- title -->
-          <span class="title">
-            {{ item.title }}
-          </span>
-
-          <!-- company -->
-          <span v-if="item.link">
-            <a :href="item.link" target="_blank">{{ item.company }}</a>
-          </span>
-          <span v-else>
-            {{ item.company }}
-          </span>
-
-          <!-- toggles -->
-          <span class="toggle">
-            <icon name="plus-circle"></icon>
-            <icon name="minus-circle"></icon>
-          </span>
-        </div>
-      </li>
-
+      <slot></slot>
     </ul>
   </section>
 </template>
@@ -37,17 +9,6 @@
 <script>
 export default {
   name: 'CvTimeline',
-  props: {
-    entries: {
-      type: Array,
-      required: true
-    }
-  },
-  data () {
-    return {
-      icon: 'coffee'
-    }
-  },
   methods: {
     isElementInViewport (el) {
       var rect = el.getBoundingClientRect()
@@ -68,7 +29,6 @@ export default {
     }
   },
   mounted () {
-    this.entries.forEach(function (entry, index) { entry['id'] = index })
     window.addEventListener('load', this.callbackFunc)
     window.addEventListener('resize', this.callbackFunc)
     window.addEventListener('scroll', this.callbackFunc)
@@ -76,7 +36,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 *,
 *::before,
 *::after {
@@ -237,14 +197,5 @@ h1 {
     border-width: 8px 16px 8px 0;
     border-color: transparent #f45b69 transparent transparent;
   }
-}
-
-.title {
-  font-weight: bolder;
-  display: block;
-}
-
-.toggle {
-  float: right;
 }
 </style>

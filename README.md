@@ -6,8 +6,7 @@
 
 ## Develop
 
-→ [Font Awesome](https://fontawesome.com/)
-→ [Vue awesome](https://github.com/Justineo/vue-awesome)
+→ [vue awesome](https://github.com/Justineo/vue-awesome)
 
 ```bash
 yarn add vue-awesome
@@ -22,5 +21,5 @@ yarn build
 ## Run
 
 ```bash
-yarn serve
+yarn dev
 ```
