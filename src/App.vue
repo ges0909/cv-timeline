@@ -4,6 +4,8 @@
 
       <CvEntry from="12/2017" to="heute" client="infinIT services GmbH" link="https://infinit-services.de/">
         Entwicklung eines Web-Portals für ein Energie-Management-System
+        <p slot="task">Grafische Darstellung von Sensordaten als Linien- und Balken-Diagramme (Frontend)</p>
+        <p slot="task">Implementierung von Remote-Services (Liferay) zur Datenbeschaffung und Service-Builder-Module zur Datenspeicherung (Backend)</p>
       </CvEntry>
 
       <CvEntry from="05/2017" to="11/2017" client="Schufa Holding AG" link="https://www.schufa.de/de/">
@@ -29,7 +31,6 @@
 <script>
 import CvTimeline from '@/components/CvTimeline.vue'
 import CvEntry from '@/components/CvEntry.vue'
-
 export default {
   name: 'app',
   components: {

@@ -6,9 +6,8 @@
         {{ from }} - {{ to }}
       </span>
 
-      <!-- title -->
       <span class="title">
-        <slot></slot>
+        <slot />
       </span>
 
       <!-- client w/o link -->
@@ -24,6 +23,7 @@
         <icon :name="icon"></icon>
       </span>
 
+      <slot name="task" show="false" />
     </div>
   </li>
 </template>
@@ -54,25 +54,30 @@ export default {
       icon: 'plus-circle'
     }
   },
+  computed: {
+  },
   methods: {
     toggle () {
       this.icon = (this.icon === 'plus-circle') ? 'minus-circle' : 'plus-circle'
+    },
+    isToggled () {
+      return this.icon === 'minus-circle'
     }
   }
 }
 </script>
 
 <style scoped>
-.title {
-  font-weight: bolder;
-  display: block;
-}
-
 .right {
   float: right;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.title {
+  font-weight: bolder;
+  display: block;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <section class="timeline">
     <ul>
-      <slot></slot>
+      <slot/>
     </ul>
   </section>
 </template>
